@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "test-plugin",
+  "version": "1.0",
+  "description": "this is a test plugin",
+  "browser_action": {
+    "default_icon": "uwenle.png",
+    "default_title": "i'm test plugin",
+    "default_popup": "hello.html"
+  },
+  "permissions": [
+    "http://*/",
+    "bookmarks",
+    "tabs",
+    "history"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "js/main.js"
+      ],
+      "run_at": "document_start"
+      //在document加载时执行该脚本
+    }
+  ]
+}
