@@ -4,7 +4,9 @@
   "version": "1.0",
   "description": "this is a test plugin",
   "browser_action": {
-    "default_icon": "uwenle.png",
+    "default_icon": {
+      "19": "uwenle.png"
+    },
     "default_title": "i'm test plugin",
     "default_popup": "hello.html"
   },
@@ -24,7 +26,8 @@
         "https://*/*"
       ],
       "js": [
-        "js/main.js"
+        "js/jquery.js",
+        "js/content-script.js"
       ],
       "run_at": "document_start"
       //在document加载时执行该脚本
